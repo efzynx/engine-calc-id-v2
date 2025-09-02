@@ -1,13 +1,14 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Link from "next/link";
+import { Alert, AlertDescription } from "@/components/ui/alert";
 
 export function LoginForm() {
   const [email, setEmail] = useState("");
@@ -15,7 +16,19 @@ export function LoginForm() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const router = useRouter();
+  const searchParams = useSearchParams();
   const supabase = createClient();
+
+  // Check for error query parameters
+  const queryError = searchParams.get("error");
+  const queryErrorDescription = searchParams.get("error_description");
+
+  const getErrorMessage = () => {
+    if (queryErrorDescription) return decodeURIComponent(queryErrorDescription);
+    if (queryError) return decodeURIComponent(queryError);
+    
+    return error;
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -38,15 +51,28 @@ export function LoginForm() {
 
   const handleOAuthSignIn = async (provider: "github" | "google") => {
     setLoading(true);
-    const { error } = await supabase.auth.signInWithOAuth({
-      provider,
-      options: {
-        redirectTo: `${window.location.origin}/auth/callback`,
-      },
-    });
+    setError("");
+    
+    try {
+      console.log("Initiating OAuth flow for provider:", provider);
+      const { data, error } = await supabase.auth.signInWithOAuth({
+        provider,
+        options: {
+          redirectTo: `${window.location.origin}/auth/callback`,
+        },
+      });
 
-    if (error) {
-      setError(error.message);
+      if (error) {
+        console.error("OAuth error:", error);
+        setError(`OAuth error: ${error.message}`);
+        setLoading(false);
+      } else {
+        console.log("OAuth flow initiated successfully:", data);
+        // Supabase will handle the redirect automatically
+      }
+    } catch (err) {
+      console.error("Unexpected OAuth error:", err);
+      setError("An unexpected error occurred during authentication. Please try again.");
       setLoading(false);
     }
   };
@@ -60,6 +86,15 @@ export function LoginForm() {
         </CardDescription>
       </CardHeader>
       <CardContent className="pt-6">
+        {/* Display query error if present */}
+        {(queryError || queryErrorDescription || error) && (
+          <Alert variant="destructive" className="mb-4">
+            <AlertDescription>
+              {getErrorMessage() || "An unknown error occurred"}
+            </AlertDescription>
+          </Alert>
+        )}
+        
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="space-y-2">
             <Label htmlFor="email">Email</Label>
@@ -85,7 +120,6 @@ export function LoginForm() {
               placeholder="Enter your password"
             />
           </div>
-          {error && <div className="text-destructive text-sm">{error}</div>}
           <Button 
             type="submit" 
             disabled={loading} 
