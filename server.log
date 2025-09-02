@@ -3122,3 +3122,184 @@ Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allow
  GET /dashboard 200 in 228ms
  ✓ Compiled /auth/login in 100ms
  GET /auth/login 200 in 1751ms
+ ✓ Compiled in 1334ms
+ ✓ Compiled in 397ms
+ HEAD / 307 in 561ms
+ GET /dashboard 200 in 6488ms
+ GET /favicon.ico?favicon.0b3bf435.ico 200 in 994ms
+ GET /favicon.ico?favicon.0b3bf435.ico 200 in 1051ms
+ GET /calculators/displacement 200 in 395ms
+ GET /dashboard 200 in 858ms
+ GET /dashboard 200 in 2160ms
+ ○ Compiling /calculators/oil-change ...
+ ✓ Compiled /calculators/oil-change in 2.6s
+ GET /calculators/oil-change 200 in 3028ms
+ GET /calculators/oil-change 200 in 617ms
+ GET /auth/login 200 in 986ms
+ GET /dashboard 200 in 1116ms
+ GET /favicon.ico?favicon.0b3bf435.ico 200 in 448ms
+ GET /calculators/displacement 200 in 327ms
+ GET /dashboard 200 in 1180ms
+ ✓ Compiled in 1117ms
+ ✓ Compiled in 121ms
+ ✓ Compiled in 182ms
+ HEAD / 307 in 2404ms
+ GET / 307 in 4447ms
+ GET /dashboard 200 in 9750ms
+ GET /dashboard 200 in 774ms
+ GET /calculators/displacement 200 in 228ms
+ GET /calculators/displacement 200 in 402ms
+ GET /auth/login 200 in 376ms
+ GET /calculators/carburetor-size 200 in 209ms
+ GET /dashboard 200 in 447ms
+ ✓ Compiled in 2.1s
+ HEAD / 307 in 2877ms
+ GET /dashboard 200 in 11694ms
+ GET /calculators/displacement 200 in 225ms
+ GET /dashboard 200 in 1027ms
+ ✓ Compiled in 3.2s
+ ✓ Compiled in 425ms
+ HEAD / 307 in 2260ms
+ GET /dashboard 200 in 8401ms
+ GET /calculators/oil-change 200 in 520ms
+ ✓ Compiled in 3.8s
+ ✓ Compiled in 332ms
+ HEAD / 307 in 1739ms
+ GET /calculators/oil-change 200 in 5525ms
+ GET /dashboard 200 in 3888ms
+ ✓ Compiled in 22.4s
+ ✓ Compiled in 18.3s
+ GET /dashboard 200 in 35705ms
+ GET /dashboard 200 in 36147ms
+ ✓ Compiled in 1765ms
+ HEAD / 307 in 3013ms
+ ✓ Compiled /dashboard in 70ms
+ GET /dashboard 200 in 17574ms
+ GET /favicon.ico?favicon.0b3bf435.ico 200 in 631ms
+ GET /favicon.ico?favicon.0b3bf435.ico 200 in 652ms
+ ✓ Compiled /calculators/displacement in 99ms
+ GET /calculators/displacement 200 in 597ms
+ ✓ Compiled /calculators/valve-size in 380ms
+ GET /calculators/valve-size 200 in 908ms
+ ✓ Compiled /calculators/compression-ratio in 82ms
+ GET /calculators/compression-ratio 200 in 453ms
+ GET /dashboard 200 in 364ms
+ GET /auth/login 200 in 1680ms
+ GET /dashboard 200 in 559ms
+ GET /dashboard 200 in 537ms
+ ✓ Compiled in 20.2s
+ HEAD / 307 in 14824ms
+ GET / 307 in 3883ms
+ ✓ Compiled /dashboard in 299ms
+ GET /dashboard 200 in 10978ms
+ ✓ Compiled /calculators/displacement in 357ms
+ GET /calculators/displacement 200 in 1254ms
+ GET /dashboard 200 in 374ms
+ ✓ Compiled in 15.4s
+ GET /dashboard 200 in 11725ms
+ GET /dashboard 200 in 13764ms
+ HEAD / 307 in 1395ms
+ GET /dashboard 200 in 965ms
+ GET /dashboard 200 in 465ms
+ ✓ Compiled in 2.7s
+ HEAD / 307 in 1863ms
+ GET /dashboard 200 in 7034ms
+ GET /dashboard 200 in 285ms
+ ✓ Compiled /calculators/displacement in 79ms
+ GET /calculators/displacement 200 in 1028ms
+ GET /calculators/displacement 200 in 169ms
+ GET /dashboard 200 in 283ms
+ GET /auth/login 200 in 1389ms
+ GET /dashboard 200 in 854ms
+ GET /dashboard 200 in 685ms
+ ✓ Compiled in 4s
+ HEAD / 307 in 609ms
+ GET /dashboard 200 in 5587ms
+ GET /dashboard 200 in 1227ms
+ GET /dashboard 200 in 523ms
+ ✓ Compiled in 4s
+ HEAD / 307 in 5242ms
+ GET /dashboard 200 in 24847ms
+ GET /dashboard 200 in 1521ms
+ GET /calculators/displacement 200 in 230ms
+ GET /calculators/displacement 200 in 289ms
+ GET /dashboard 200 in 477ms
+ GET /calculators/displacement 200 in 219ms
+ GET /favicon.ico?favicon.0b3bf435.ico 200 in 335ms
+ ✓ Compiled /calculators/compression-ratio in 443ms
+ GET /calculators/compression-ratio 200 in 1879ms
+ ✓ Compiled /calculators/power-to-weight in 116ms
+ GET /calculators/power-to-weight 200 in 323ms
+ ✓ Compiled in 4.2s
+ ✓ Compiled in 495ms
+ ✓ Compiled in 3.5s
+ HEAD / 307 in 2983ms
+ GET /dashboard 200 in 7709ms
+ GET / 307 in 2837ms
+ GET /dashboard 200 in 5476ms
+ GET /favicon.ico 200 in 1944ms
+ GET /dashboard 200 in 2183ms
+ GET / 307 in 406ms
+ GET /dashboard 200 in 429ms
+ GET / 307 in 340ms
+ GET /dashboard 200 in 624ms
+ GET / 307 in 304ms
+ GET /dashboard 200 in 305ms
+ GET /calculators/displacement 200 in 143ms
+ GET /calculators/displacement 200 in 170ms
+ GET /calculators/displacement 200 in 306ms
+ GET /calculators/displacement 200 in 390ms
+ GET /calculators/displacement 200 in 221ms
+ ✓ Compiled in 32.2s
+ ○ Compiling /calculators/displacement ...
+ ✓ Compiled /calculators/displacement in 1192ms
+ GET /calculators/displacement 200 in 37181ms
+ GET /calculators/displacement 200 in 37451ms
+ HEAD / 307 in 6576ms
+ GET /calculators/displacement 200 in 5510ms
+ GET /calculators/displacement 200 in 1954ms
+ ○ Compiling /dashboard ...
+ ✓ Compiled /dashboard in 4.4s
+ GET /dashboard 200 in 7726ms
+ GET /dashboard 200 in 3823ms
+ GET /dashboard 200 in 1466ms
+ GET /dashboard 200 in 1488ms
+ GET /dashboard 200 in 546ms
+ ✓ Compiled in 14.7s
+ HEAD / 307 in 3072ms
+ GET /dashboard 200 in 7763ms
+ GET /favicon.ico?favicon.0b3bf435.ico 200 in 527ms
+ GET /favicon.ico?favicon.0b3bf435.ico 200 in 548ms
+ GET /dashboard 200 in 1245ms
+ GET /dashboard 200 in 2476ms
+ GET / 307 in 327ms
+ GET /dashboard 200 in 530ms
+ GET /calculators/displacement 200 in 153ms
+ GET /dashboard 200 in 229ms
+ GET /dashboard 200 in 6212ms
+ GET /dashboard 200 in 1485ms
+ ✓ Compiled in 6.6s
+ ✓ Compiled in 628ms
+ HEAD / 307 in 4327ms
+ GET /dashboard 200 in 9229ms
+ GET /dashboard 200 in 1938ms
+ GET /dashboard 200 in 486ms
+ ✓ Compiled in 29.8s
+ GET /dashboard 200 in 26983ms
+ HEAD / 307 in 7905ms
+ GET /dashboard 200 in 400ms
+ GET /calculators/displacement 200 in 1692ms
+ GET /dashboard 200 in 219ms
+ GET /dashboard 200 in 1306ms
+ GET /dashboard 200 in 522ms
+ GET /dashboard 200 in 1536ms
+ GET /dashboard 200 in 813ms
+ HEAD / 307 in 8252ms
+ ✓ Compiled in 31.2s
+ GET / 307 in 1023ms
+ ✓ Compiled /dashboard in 340ms
+ GET /dashboard 200 in 15213ms
+ GET /dashboard 200 in 7663ms
+ GET /dashboard 200 in 1120ms
+ GET / 307 in 406ms
+ GET /dashboard 200 in 759ms

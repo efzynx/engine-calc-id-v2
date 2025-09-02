@@ -108,7 +108,7 @@ export function Sidebar({ className, minimized = false }: { className?: string; 
                       "h-10 w-10",
                       (pathname === item.href || (item.subItems && item.subItems.some(sub => pathname.startsWith(sub.href)))) 
                         ? "bg-accent text-accent-foreground" 
-                        : "text-secondary-foreground hover:bg-muted"
+                        : "text-foreground hover:bg-muted"
                     )}
                   >
                     <item.icon className="h-5 w-5" />
@@ -122,7 +122,7 @@ export function Sidebar({ className, minimized = false }: { className?: string; 
                         size="icon"
                         className={cn(
                           "h-10 w-10",
-                          pathname === subItem.href ? "bg-accent text-accent-foreground" : "text-secondary-foreground hover:bg-muted"
+                          pathname === subItem.href ? "bg-accent text-accent-foreground" : "text-foreground hover:bg-muted"
                         )}
                       >
                         <span className="text-xs">{subItem.title.charAt(0)}</span>
@@ -138,7 +138,7 @@ export function Sidebar({ className, minimized = false }: { className?: string; 
                   size="icon"
                   className={cn(
                     "h-10 w-10",
-                    pathname === item.href ? "bg-accent text-accent-foreground" : "text-secondary-foreground hover:bg-muted"
+                    pathname === item.href ? "bg-accent text-accent-foreground" : "text-foreground hover:bg-muted"
                   )}
                 >
                   <item.icon className="h-5 w-5" />
@@ -155,9 +155,6 @@ export function Sidebar({ className, minimized = false }: { className?: string; 
     <div className={cn("pb-12 bg-muted/50 h-full overflow-y-auto", className)}>
       <div className="space-y-4 py-4">
         <div className="px-3 py-2">
-          <div className="mb-4 px-4 text-lg font-semibold tracking-tight text-primary md:hidden">
-            ENGINE-CALC-ID
-          </div>
           <div className="space-y-1">
             {menuItems.map((item) => (
               <div key={item.title}>
@@ -174,7 +171,7 @@ export function Sidebar({ className, minimized = false }: { className?: string; 
                           "w-full justify-between font-medium",
                           (pathname === item.href || (item.subItems && item.subItems.some(sub => pathname.startsWith(sub.href)))) 
                             ? "bg-accent text-accent-foreground" 
-                            : "text-secondary-foreground hover:bg-muted"
+                            : "text-foreground hover:bg-muted"
                         )}
                       >
                         <div className="flex items-center">
@@ -194,7 +191,7 @@ export function Sidebar({ className, minimized = false }: { className?: string; 
                             variant="ghost"
                             className={cn(
                               "w-full justify-start pl-8",
-                              pathname === subItem.href ? "bg-accent text-accent-foreground" : "text-secondary-foreground hover:bg-muted"
+                              pathname === subItem.href ? "bg-accent text-accent-foreground" : "text-foreground hover:bg-muted"
                             )}
                           >
                             {subItem.title}
@@ -209,7 +206,7 @@ export function Sidebar({ className, minimized = false }: { className?: string; 
                       variant="ghost"
                       className={cn(
                         "w-full justify-start font-medium",
-                        pathname === item.href ? "bg-accent text-accent-foreground" : "text-secondary-foreground hover:bg-muted"
+                        pathname === item.href ? "bg-accent text-accent-foreground" : "text-foreground hover:bg-muted"
                       )}
                     >
                       <item.icon className="mr-2 h-4 w-4" />

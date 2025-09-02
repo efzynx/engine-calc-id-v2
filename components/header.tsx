@@ -29,16 +29,17 @@ export function Header() {
   };
 
   return (
-    <header className="w-full bg-primary text-primary-foreground h-16 shadow-md fixed top-0 left-0 right-0 z-50">
-      <div className="w-full flex justify-between items-center p-3 px-5 text-sm">
-        <div className="flex gap-5 items-center font-semibold">
-          <div className="flex items-center gap-2">
-            <span className="text-xl">
-              {getPageTitle()}
-            </span>
-          </div>
+    <header className="w-full bg-primary text-primary-foreground h-14 shadow-md fixed top-0 left-0 right-0 z-50">
+      <div className="w-full flex justify-between items-center p-2 px-4 text-sm">
+        <div className="flex items-center font-semibold">
+          <span className="text-base">Engine Calc ID</span>
         </div>
-        <div className="flex items-center gap-4">
+        <div className="flex-grow text-center font-semibold truncate px-2">
+          <span className="text-base">
+            {getPageTitle()}
+          </span>
+        </div>
+        <div className="flex items-center gap-3">
           <ThemeSwitcher />
           <AuthButton />
         </div>
