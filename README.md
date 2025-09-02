@@ -1,105 +1,131 @@
-<a href="https://demo-nextjs-with-supabase.vercel.app/">
-  <img alt="Next.js and Supabase Starter Kit - the fastest way to build apps with Next.js and Supabase" src="https://demo-nextjs-with-supabase.vercel.app/opengraph-image.png">
-  <h1 align="center">Next.js and Supabase Starter Kit</h1>
+<a href="https://engine-calc-id.vercel.app/">
+  <img alt="Engine Calculator ID - Professional Automotive Engineering Calculator" src="https://raw.githubusercontent.com/shadcn/ui/main/apps/www/public/logo.png">
+  <h1 align="center">Engine Calculator ID</h1>
 </a>
 
 <p align="center">
- The fastest way to build apps with Next.js and Supabase
+ Professional automotive engineering calculations for mechanics and enthusiasts
 </p>
 
 <p align="center">
   <a href="#features"><strong>Features</strong></a> ·
   <a href="#demo"><strong>Demo</strong></a> ·
-  <a href="#deploy-to-vercel"><strong>Deploy to Vercel</strong></a> ·
-  <a href="#clone-and-run-locally"><strong>Clone and run locally</strong></a> ·
-  <a href="#feedback-and-issues"><strong>Feedback and issues</strong></a>
-  <a href="#more-supabase-examples"><strong>More Examples</strong></a>
+  <a href="#technologies"><strong>Technologies</strong></a> ·
+  <a href="#calculators"><strong>Calculators</strong></a> ·
+  <a href="#getting-started"><strong>Getting Started</strong></a> ·
+  <a href="#deployment"><strong>Deployment</strong></a>
 </p>
 <br/>
 
 ## Features
 
-- Works across the entire [Next.js](https://nextjs.org) stack
-  - App Router
-  - Pages Router
-  - Middleware
-  - Client
-  - Server
-  - It just works!
-- supabase-ssr. A package to configure Supabase Auth to use cookies
-- Password-based authentication block installed via the [Supabase UI Library](https://supabase.com/ui/docs/nextjs/password-based-auth)
-- Styling with [Tailwind CSS](https://tailwindcss.com)
-- Components with [shadcn/ui](https://ui.shadcn.com/)
-- Optional deployment with [Supabase Vercel Integration and Vercel deploy](#deploy-your-own)
-  - Environment variables automatically assigned to Vercel project
+- **Comprehensive Engine Calculations** - Professional-grade calculators for automotive engineering
+- **Responsive Design** - Works seamlessly on mobile, tablet, and desktop devices
+- **Intuitive Navigation** - Clean sidebar navigation with mobile-friendly overlay menus
+- **User Authentication** - Secure authentication powered by Supabase
+- **Dark/Light Theme** - Support for both light and dark color schemes
+- **Modern UI Components** - Beautiful UI built with shadcn/ui and Tailwind CSS
+- **Real-time Calculations** - Instant results as you input parameters
+- **Persistent Sessions** - Remembers your login and preferences
 
 ## Demo
 
-You can view a fully working demo at [demo-nextjs-with-supabase.vercel.app](https://demo-nextjs-with-supabase.vercel.app/).
+You can view a fully working demo at [engine-calc-id.vercel.app](https://engine-calc-id.vercel.app/).
 
-## Deploy to Vercel
+## Technologies
 
-Vercel deployment will guide you through creating a Supabase account and project.
+- [Next.js 14+](https://nextjs.org/) - React framework with App Router
+- [Supabase](https://supabase.com/) - Backend-as-a-Service for authentication and database
+- [TypeScript](https://www.typescriptlang.org/) - Typed JavaScript for better developer experience
+- [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
+- [shadcn/ui](https://ui.shadcn.com/) - Re-usable components built with Radix UI and Tailwind CSS
+- [Lucide Icons](https://lucide.dev/) - Beautiful & consistent icon toolkit
 
-After installation of the Supabase integration, all relevant environment variables will be assigned to the project so the deployment is fully functioning.
+## Calculators
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fnext.js%2Ftree%2Fcanary%2Fexamples%2Fwith-supabase&project-name=nextjs-with-supabase&repository-name=nextjs-with-supabase&demo-title=nextjs-with-supabase&demo-description=This+starter+configures+Supabase+Auth+to+use+cookies%2C+making+the+user%27s+session+available+throughout+the+entire+Next.js+app+-+Client+Components%2C+Server+Components%2C+Route+Handlers%2C+Server+Actions+and+Middleware.&demo-url=https%3A%2F%2Fdemo-nextjs-with-supabase.vercel.app%2F&external-id=https%3A%2F%2Fgithub.com%2Fvercel%2Fnext.js%2Ftree%2Fcanary%2Fexamples%2Fwith-supabase&demo-image=https%3A%2F%2Fdemo-nextjs-with-supabase.vercel.app%2Fopengraph-image.png)
+### Engine Calculators
+- **Engine Displacement** - Calculate engine displacement based on bore, stroke, and cylinder count
+- **Valve Size** - Determine optimal intake and exhaust valve sizes
+- **Compression Ratio** - Calculate compression ratio using combustion chamber volume
+- **Carburetor Size** - Determine the recommended carburetor size in CFM
+- **Fuel Ratio** - Calculate air-fuel ratios for optimal performance
+- **Ignition Timing** - Determine optimal ignition timing settings
 
-The above will also clone the Starter kit to your GitHub, you can clone that locally and develop locally.
+### Wheel & Gear Calculators
+- **Gear Ratio** - Calculate gear ratios for differentials and transmissions
+- **Tire Size** - Compare tire sizes and their effect on speedometer readings
+- **Speed Calculator** - Determine vehicle speed based on RPM and gear ratios
 
-If you wish to just develop locally and not deploy to Vercel, [follow the steps below](#clone-and-run-locally).
+### Performance Calculators
+- **Horsepower** - Calculate horsepower from torque and RPM
+- **Torque** - Calculate torque from horsepower and RPM
+- **Power-to-Weight** - Determine power-to-weight ratios for performance comparisons
 
-## Clone and run locally
+### Maintenance Calculators
+- **Oil Change** - Track oil change intervals and maintenance schedules
+- **Service Intervals** - Calculate service intervals based on usage patterns
 
-1. You'll first need a Supabase project which can be made [via the Supabase dashboard](https://database.new)
+## Getting Started
 
-2. Create a Next.js app using the Supabase Starter template npx command
+### Prerequisites
 
+1. Node.js 18+
+2. A Supabase project (create one at [Supabase Dashboard](https://database.new))
+
+### Setup
+
+1. Clone the repository:
    ```bash
-   npx create-next-app --example with-supabase with-supabase-app
+   git clone https://github.com/efzynx/engine-calc-id-v2.git
+   cd engine-calc-id
    ```
 
+2. Install dependencies:
    ```bash
-   yarn create next-app --example with-supabase with-supabase-app
+   npm install
+   # or
+   yarn install
+   # or
+   pnpm install
    ```
 
+3. Set up environment variables:
    ```bash
-   pnpm create next-app --example with-supabase with-supabase-app
+   cp .env.example .env.local
+   ```
+   
+   Update `.env.local` with your Supabase credentials:
+   ```
+   NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url
+   NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
    ```
 
-3. Use `cd` to change into the app's directory
-
-   ```bash
-   cd with-supabase-app
-   ```
-
-4. Rename `.env.example` to `.env.local` and update the following:
-
-   ```
-   NEXT_PUBLIC_SUPABASE_URL=[INSERT SUPABASE PROJECT URL]
-   NEXT_PUBLIC_SUPABASE_ANON_KEY=[INSERT SUPABASE PROJECT API ANON KEY]
-   ```
-
-   Both `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY` can be found in [your Supabase project's API settings](https://supabase.com/dashboard/project/_?showConnect=true)
-
-5. You can now run the Next.js local development server:
-
+4. Run the development server:
    ```bash
    npm run dev
+   # or
+   yarn dev
+   # or
+   pnpm dev
    ```
 
-   The starter kit should now be running on [localhost:3000](http://localhost:3000/).
+5. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-6. This template comes with the default shadcn/ui style initialized. If you instead want other ui.shadcn styles, delete `components.json` and [re-install shadcn/ui](https://ui.shadcn.com/docs/installation/next)
+## Deployment
 
-> Check out [the docs for Local Development](https://supabase.com/docs/guides/getting-started/local-development) to also run Supabase locally.
+### Vercel Deployment
 
-## Feedback and issues
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Please file feedback and issues over on the [Supabase GitHub org](https://github.com/supabase/supabase/issues/new/choose).
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fefzynx%2Fengine-calc-id-v2)
 
-## More Supabase examples
+### Other Hosting Options
 
-- [Next.js Subscription Payments Starter](https://github.com/vercel/nextjs-subscription-payments)
-- [Cookie-based Auth and the Next.js 13 App Router (free course)](https://youtube.com/playlist?list=PL5S4mPUpp4OtMhpnp93EFSo42iQ40XjbF)
-- [Supabase Auth and the Next.js App Router](https://github.com/supabase/supabase/tree/master/examples/auth/nextjs)
+You can also deploy your app to any static hosting service that supports Next.js:
+
+- Netlify
+- Cloudflare Pages
+- Firebase Hosting
+- AWS Amplify
+
+Check out the [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
