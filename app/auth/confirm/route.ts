@@ -1,30 +1,28 @@
 import { createClient } from "@/lib/supabase/server";
-import { type EmailOtpType } from "@supabase/supabase-js";
-import { redirect } from "next/navigation";
-import { type NextRequest } from "next/server";
+import { NextResponse } from "next/server";
 
-export async function GET(request: NextRequest) {
+export async function GET(request: Request) {
+  const requestUrl = new URL(request.url);
   const { searchParams } = new URL(request.url);
-  const token_hash = searchParams.get("token_hash");
-  const type = searchParams.get("type") as EmailOtpType | null;
-  const next = searchParams.get("next") ?? "/";
+  const error = searchParams.get("error");
+  const error_description = searchParams.get("error_description");
 
-  if (token_hash && type) {
-    const supabase = await createClient();
-
-    const { error } = await supabase.auth.verifyOtp({
-      type,
-      token_hash,
-    });
-    if (!error) {
-      // redirect user to specified redirect URL or root of app
-      redirect(next);
-    } else {
-      // redirect the user to an error page with some instructions
-      redirect(`/auth/error?error=${error?.message}`);
-    }
+  if (error) {
+    console.error("OAuth error:", error, error_description);
+    // Handle OAuth errors appropriately
+    return NextResponse.redirect(`${requestUrl.origin}/auth/error?error=${error}&error_description=${error_description}`);
   }
 
-  // redirect the user to an error page with some instructions
-  redirect(`/auth/error?error=No token hash or type`);
+  const supabase = await createClient();
+
+  // Get the OAuth tokens from the provider
+  const { error: sessionError } = await supabase.auth.getSession();
+  
+  if (sessionError) {
+    console.error("Error getting session:", sessionError);
+    return NextResponse.redirect(`${requestUrl.origin}/auth/error?message=Failed to get session`);
+  }
+
+  // Redirect to calculators page after successful sign in
+  return NextResponse.redirect(`${requestUrl.origin}/calculators`);
 }
