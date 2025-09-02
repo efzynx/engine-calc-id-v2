@@ -15,7 +15,7 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
 
 const menuItems = [
@@ -67,6 +67,8 @@ const menuItems = [
 export function Sidebar({ className, minimized = false }: { className?: string; minimized?: boolean }) {
   const pathname = usePathname();
   const [openMenus, setOpenMenus] = useState<Record<string, boolean>>({});
+  const [popupMenu, setPopupMenu] = useState<string | null>(null);
+  const popupRef = useRef<HTMLDivElement>(null);
 
   // Automatically open the menu containing the current page
   useEffect(() => {
@@ -82,6 +84,20 @@ export function Sidebar({ className, minimized = false }: { className?: string; 
     }
   }, [pathname]);
 
+  // Close popup when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (popupMenu && popupRef.current && !popupRef.current.contains(e.target as Node)) {
+        setPopupMenu(null);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [popupMenu]);
+
   const toggleMenu = (title: string) => {
     setOpenMenus(prev => ({
       ...prev,
@@ -89,48 +105,68 @@ export function Sidebar({ className, minimized = false }: { className?: string; 
     }));
   };
 
+  const showPopupMenu = (title: string) => {
+    setPopupMenu(popupMenu === title ? null : title);
+  };
+
+  const isMenuActive = (item: typeof menuItems[0]) => {
+    return pathname === item.href || 
+           (item.subItems && item.subItems.some(sub => pathname.startsWith(sub.href)));
+  };
+
   if (minimized) {
     return (
-      <div className={cn("pb-12 bg-muted/50 h-full overflow-y-auto flex flex-col items-center py-4", className)}>
+      <div className={cn("pb-12 bg-muted/50 h-full overflow-y-auto flex flex-col items-center py-4 relative", className)}>
         {menuItems.map((item) => (
-          <div key={item.title} className="mb-2">
+          <div key={item.title} className="mb-2 relative">
             {item.subItems ? (
-              <Collapsible
-                open={openMenus[item.title] || false}
-                onOpenChange={() => toggleMenu(item.title)}
-                className="space-y-1 flex flex-col items-center"
-              >
-                <CollapsibleTrigger asChild>
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    className={cn(
-                      "h-10 w-10",
-                      (pathname === item.href || (item.subItems && item.subItems.some(sub => pathname.startsWith(sub.href)))) 
-                        ? "bg-accent text-accent-foreground" 
-                        : "text-foreground hover:bg-muted"
-                    )}
+              <>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className={cn(
+                    "h-10 w-10",
+                    isMenuActive(item) 
+                      ? "bg-accent text-accent-foreground" 
+                      : "text-foreground hover:bg-muted"
+                  )}
+                  onClick={() => showPopupMenu(item.title)}
+                >
+                  <item.icon className="h-5 w-5" />
+                </Button>
+                
+                {/* Popup menu for mobile */}
+                {popupMenu === item.title && (
+                  <div 
+                    ref={popupRef}
+                    className="fixed left-20 top-16 w-48 bg-popover border border-border rounded-md shadow-lg z-50 md:hidden"
                   >
-                    <item.icon className="h-5 w-5" />
-                  </Button>
-                </CollapsibleTrigger>
-                <CollapsibleContent className="space-y-1 mt-1 flex flex-col items-center">
-                  {item.subItems.map((subItem) => (
-                    <Link key={subItem.href} href={subItem.href}>
-                      <Button
-                        variant="ghost"
-                        size="icon"
-                        className={cn(
-                          "h-10 w-10",
-                          pathname === subItem.href ? "bg-accent text-accent-foreground" : "text-foreground hover:bg-muted"
-                        )}
-                      >
-                        <span className="text-xs">{subItem.title.charAt(0)}</span>
-                      </Button>
-                    </Link>
-                  ))}
-                </CollapsibleContent>
-              </Collapsible>
+                    <div className="p-2">
+                      <div className="px-2 py-1 text-sm font-medium text-muted-foreground border-b">
+                        {item.title}
+                      </div>
+                      <div className="py-1">
+                        {item.subItems.map((subItem) => (
+                          <Link key={subItem.href} href={subItem.href}>
+                            <Button
+                              variant="ghost"
+                              className={cn(
+                                "w-full justify-start",
+                                pathname === subItem.href 
+                                  ? "bg-accent text-accent-foreground" 
+                                  : "text-foreground hover:bg-muted"
+                              )}
+                              onClick={() => setPopupMenu(null)}
+                            >
+                              {subItem.title}
+                            </Button>
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </>
             ) : (
               <Link href={item.href || "/dashboard"}>
                 <Button
@@ -138,7 +174,9 @@ export function Sidebar({ className, minimized = false }: { className?: string; 
                   size="icon"
                   className={cn(
                     "h-10 w-10",
-                    pathname === item.href ? "bg-accent text-accent-foreground" : "text-foreground hover:bg-muted"
+                    isMenuActive(item) 
+                      ? "bg-accent text-accent-foreground" 
+                      : "text-foreground hover:bg-muted"
                   )}
                 >
                   <item.icon className="h-5 w-5" />
@@ -169,7 +207,7 @@ export function Sidebar({ className, minimized = false }: { className?: string; 
                         variant="ghost"
                         className={cn(
                           "w-full justify-between font-medium",
-                          (pathname === item.href || (item.subItems && item.subItems.some(sub => pathname.startsWith(sub.href)))) 
+                          isMenuActive(item) 
                             ? "bg-accent text-accent-foreground" 
                             : "text-foreground hover:bg-muted"
                         )}
@@ -206,7 +244,9 @@ export function Sidebar({ className, minimized = false }: { className?: string; 
                       variant="ghost"
                       className={cn(
                         "w-full justify-start font-medium",
-                        pathname === item.href ? "bg-accent text-accent-foreground" : "text-foreground hover:bg-muted"
+                        isMenuActive(item) 
+                          ? "bg-accent text-accent-foreground" 
+                          : "text-foreground hover:bg-muted"
                       )}
                     >
                       <item.icon className="mr-2 h-4 w-4" />

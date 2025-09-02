@@ -3303,3 +3303,71 @@ Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allow
  GET /dashboard 200 in 1120ms
  GET / 307 in 406ms
  GET /dashboard 200 in 759ms
+ ✓ Compiled in 26.8s
+ HEAD / 307 in 4451ms
+ GET /dashboard 200 in 16107ms
+ GET /dashboard 200 in 2278ms
+ GET /favicon.ico?favicon.0b3bf435.ico 200 in 1478ms
+ GET /dashboard 200 in 614ms
+ GET /dashboard 200 in 1086ms
+ ✓ Compiled in 16.9s
+ HEAD / 307 in 18070ms
+ GET / 307 in 2015ms
+ GET /dashboard 200 in 14742ms
+ ○ Compiling /calculators/displacement ...
+ ✓ Compiled /calculators/displacement in 2.8s
+ GET /calculators/displacement 200 in 25155ms
+ ○ Compiling /calculators/valve-size ...
+ GET /calculators/displacement 200 in 920ms
+ ✓ Compiled /calculators/valve-size in 1747ms
+ GET /calculators/displacement 200 in 906ms
+ GET /calculators/valve-size 200 in 4462ms
+ ✓ Compiled /calculators/gear-ratio in 426ms
+ GET /calculators/displacement 200 in 3060ms
+ GET /calculators/valve-size 200 in 6153ms
+ GET /calculators/gear-ratio 200 in 6388ms
+ GET /calculators/displacement 200 in 5725ms
+ GET /calculators/valve-size 200 in 524ms
+ GET /calculators/valve-size 200 in 3646ms
+ GET /calculators/displacement 200 in 245ms
+ GET /calculators/valve-size 200 in 198ms
+ ✓ Compiled /calculators/compression-ratio in 186ms
+ GET /calculators/compression-ratio 200 in 1449ms
+ GET /dashboard 200 in 284ms
+ GET /dashboard 200 in 4676ms
+ GET /calculators/displacement 200 in 367ms
+ GET /calculators/valve-size 200 in 221ms
+ ○ Compiling /calculators/speed ...
+ ✓ Compiled /calculators/speed in 527ms
+ GET /calculators/speed 200 in 3381ms
+ GET /calculators/gear-ratio 200 in 421ms
+ ✓ Compiled in 10.9s
+ HEAD / 307 in 6876ms
+ GET /calculators/gear-ratio 200 in 12209ms
+ GET /calculators/gear-ratio 200 in 706ms
+ GET /dashboard 200 in 495ms
+ GET /calculators/displacement 200 in 276ms
+ GET /calculators/valve-size 200 in 2097ms
+ GET /dashboard 200 in 2847ms
+ GET /dashboard 200 in 5576ms
+ GET /calculators/displacement 200 in 2263ms
+ GET /calculators/valve-size 200 in 2752ms
+ GET /calculators/gear-ratio 200 in 412ms
+ ○ Compiling /calculators/tire-size ...
+ ✓ Compiled /calculators/tire-size in 9s
+ GET /calculators/tire-size 200 in 10774ms
+ GET /calculators/tire-size 200 in 3456ms
+ GET /calculators/tire-size 200 in 744ms
+ GET /dashboard 200 in 2637ms
+ GET /dashboard 200 in 1309ms
+ GET /favicon.ico?favicon.0b3bf435.ico 200 in 298ms
+ GET /calculators/displacement 200 in 4454ms
+ GET /calculators/valve-size 200 in 2529ms
+ GET /calculators/speed 200 in 1664ms
+ ○ Compiling /calculators/fuel-ratio ...
+ ✓ Compiled /calculators/fuel-ratio in 958ms
+ GET /calculators/fuel-ratio 200 in 4978ms
+ ○ Compiling /calculators/service ...
+ ✓ Compiled /calculators/service in 2.6s
+ GET /calculators/service 200 in 3472ms
+ GET /dashboard 200 in 1741ms
